@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours{% endblock %}
+{% block titre %}Cours{% endblock %}
+{% block body %}
+
+
+
+    {% for cour in cours %}
+
+
+        <div class="card m-3">
+            <h3 class="card-header">{{ cour.intitule }}</h3>
+            <div class="card-body">
+                <div class="card-subtitle "
+                     style=" text-justify: auto;font-size: 1em; text-align: justify;">
+                        {{ cour.textcours|raw }}
+                </div>
+            </div>
+
+            <p align="center">
+                <iframe src="https://www.youtube.com/embed/{{ cour.getUrlYtb() }}" height="400" width="500"></iframe>
+            </p>
+
+
+            <div class="card-footer text-muted">
+
+            </div>
+        </div>
+
+
+
+
+
+    {% endfor %}
+{% endblock %}
